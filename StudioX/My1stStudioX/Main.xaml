@@ -1,0 +1,218 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="590,4224.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uasb="clr-namespace:UiPath.Activities.System.Binding;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="48">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Activities.System.Binding</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <ueab:SequenceX sap:VirtualizedContainerService.HintSize="600,4120" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX.Variables>
+      <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.xlsx&quot;,visible:=True,autoSave:=True,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="Notes" />
+      <Variable x:TypeArguments="uasb:BindingsRepository" Default="[new UiPath.Activities.System.Binding.BindingsRepository()]" Name="Saved" />
+    </ueab:SequenceX.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ueab:ExcelApplicationCard Password="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="558,4030" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" WorkbookPath="[string.Format(&quot;{0}\FirstStudioXData\Report.xlsx&quot;, Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory))]">
+      <ueab:ExcelApplicationCard.Body>
+        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="TemplateReport" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540,3792" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[TemplateReport.Sheet(&quot;Report&quot;).DataTableOutValue]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[string.Format(&quot;{0}\FirstStudioXData\Product Export.csv&quot;, Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory))]" sap:VirtualizedContainerService.HintSize="498,158.666666666667" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+            <ueab:WriteCellX Cell="[TemplateReport.Sheet(&quot;Report&quot;).Cell(&quot;F1&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="498,168.666666666667" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[string.Format(&quot;Total Sales USD&quot;)]" />
+            <uix:NApplicationCard CloseMode="{x:Null}" OpenMode="{x:Null}" DisplayName="Use Browser Chrome: currency converter - Google Search" sap:VirtualizedContainerService.HintSize="498,962" sap2010:WorkflowViewState.IdRef="NApplicationCard_3">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="460,742" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:ExcelForEachRow DisplayName="Excel For Each Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="418,652" sap2010:WorkflowViewState.IdRef="ExcelForEachRow_1" Range="[TemplateReport.Sheet(&quot;Converter&quot;)]" SaveAfterEachRow="False">
+                      <ueab:ExcelForEachRow.Body>
+                        <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                          <ActivityAction.Argument1>
+                            <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                          </ActivityAction.Argument1>
+                          <ActivityAction.Argument2>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                          </ActivityAction.Argument2>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,462.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NTypeInto ClickBeforeMode="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyFieldMode="{x:Null}" ActivateBefore="True" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="358,170" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[string.Format(&quot;{0} To USD{1}&quot;, CurrentRow.ByField(&quot;Currency&quot;), &quot;[k(enter)]&quot;.ToString().ToString)]">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="255, 199, 786, 46" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;html app='chrome.exe' title='Currency converter - Google Search' /&gt;&lt;webctrl name='q' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='Currency converter - Google Search' /&gt;&lt;webctrl name='q' tag='INPUT' type='text' aaname='Search' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAxYAAAAyCAYAAADBa00aAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAApOSURBVHhe7d29axvZGsfx+6/on5jSpDEp4srqBlIIUggMEQSMWDBiYRGGIFIYsVwjAou5EERgQYYFwV1QERAXjFMEp1icIijFgoqAioCLwHOf8zaakWZkWWPHm93vBwyJ5kVzZlQ8P51zdP4lAAAAAFASwQIAAABAaQQLAAAAAKURLAAAAACURrAAAAAAUBrBAgAAAEBpBAsAAAAApREsAAAAAJRGsAAAAABQGsECAAAAQGkECwAAAAClESwAAAAAlEawAAAAAFAawQIAAABAaQQLAAAAAKURLAAAAACUtjJYzD6OpH/YlPhhJJVKRf8i2Y6b0n49lulXvxNwS2bvTqQ7nPr/AQAA4HuSHyy+TmT4UyyRCRPRtsT7bekd96T3oiW1EDIeNKX/4cofAJT0rms/b/VTggUAAMD3KCdYTGTwzIWH6vNRbs/EZNiSqg0dDRn+6V8EynjbtZ85ggUAAMD3aSlYTF7XbIEXHY5lVX/Excuq2+/56v2AtRAsAAAAvmsLweJcupGZS1GT/kf/UpHPQ2k9jKV5OJKJf+n8yBxbke5b/0KaLxwrR+f+BZHpaV1fq8vgw6UM/NCr6GFNOqPpym2J6bkMjppSfeDeNzLXc5wz/+PPgdR1uy1ap2Pp7ceybdsZyfaTlpyczfyOC3Tfk4N64flnw6Z9feflhXth0fue7JjtxwXbF0zHJ9Laq8qWHhPms/TGeYX2TC6HXWnG2264WmVLqnvajpx93TPp6pPVY07bUt/dstdceVCV5tFQLr/4HTUejp+bnqoo//mpi5c79tj2m1SUnE1k9Et6iFxV6ocDuVy6pfrZMtv1+c/OelK391Sve78n/66bf2f/sgFjJpOR3psn6fa2ZfDH8nNL2vv5XHp7rq1bu03p/0H8BQAAuEvZYOHHuVce95OwcBObBYsdqe5GWrQ3pH3ck/bThgw01KzaZlxp0V4L4eCpmwPSfuoLz10tLJOCWYVg8VPbHrNVa0lH9+8c1JIivvV7tki90uu1w71s8WvO35FWzRfl4fyzkbTM/x/1JC86XBybQjy+PqRpUX9+5HqAbMF/6Oez+EBT1XuWlMVfLqXvh6qF+1K4r3LPpCntQz1/tC0Nc+7jtjRCENhNXbu22Qa41DOau5DeI90/6sg4vMEnbf+ue9+lexrps/rk97N8sNit6n3dktpBx1330X/lf6/1mvQ4c56dZ/q6nqf/NjwPDS4/hntTk9aLdHsjaZxmP6muvfoeel3umvS5PenOrxkAAAB3IhMsXDGvhVluYXm9zYKFvvaokw0CatU2udIi1RS5WkB23mQDweS04Yrjg5EkW3ywsIXor9lC9OqsY3sVKnsDSb4jvxpLx4QWLY6zE9TnAaD6y6X9//jQnHdHeu/dHnO+96d2fUi7GnfcNT/rp3oQ1Bc9hy3cq3Lyh3nhSi5+9u+v9zHT8iRwZENSeCY2DGUOmMhgz2xL91CE8KD7+lcSvvdlPvRtmhzfeHWZCTNJKEuHlhAs9K++8Aws//lYHAoVPger7k363ift1ee5STgGAADAZv4SwSJvKNGqbWEIUv78jpkM9811pIZzhWCRVzAnBe982+z3lj1//B8THhZo6Gg/qEr8gytcQyhYGu7kv/2/fs7ATEYH5v1jOfngX0q5etOWrd1Ymuab+aSHRK817xv4j32pme2pHqfwTPKuI9zj9DbXy7I8HMoNg0oFKB80KgXBKZynk3QVhPvcklE2Czq5wcIHnaKheUthZ97exR4oAAAA3K2/RLDIKwKLt4Vegop0zvxLCya/umMbv/kiNQSLZ8N5r0QifPM+DxauHVpcv/MvrBJ6NxaGQ50fmd6Dpgw/+xcK+YJbQ89yhFoQhqq9KHo+ExnY+QoNCctBrGxLXjEfivXMZ8AX+Kk2Tl7F7ti83gfjrGO3Rz+HI3w7C4aN5V6LBqXYHFMv6n04l47Znrp3rr15PUgAAAC4S9lg8VvDFnfFhetqmwaLvP2Lt4UgsC11O18g58+P10/eKwSL3MC0GCzC/+syWPOndF2ISBWzIWxc88taVri29FCsAqEnpbCYT0LXfF6HeyYFbcntJZhIv6bHpHt3fNhI9x6FZx3/0M1/Bs8brkcjaZcPFkXtzLuW8JmJm9LNe4/jjjRsj8a8fSvbCwAAgDuTnbwdhresNXlbC/D9qtQPujLyk3S/bbBY4+8bBYuk8PbDodzwqCg1DGiFOwkWeu2ZZ3KTYKHRwv7k8Hw4VN4k9PCsr/27jWBx7R/BAgAA4L5lg0UY8rLOz82G8fypXwn6NsFiuXi+1o2Chbbjhfn/mkOhrPRQIb0+87OtufM58iwP5ym0xlCo/mNz7YtDoW4WLML9csOhfNsW5lKEoVBFw9GWbRAswlCoG/SgESwAAADux0KwmBf0mV9VWnKlxbf5Frsi1dTwmHBs3pyJUIiWDxbzbc3hmhN0bxgswuTw3Mnbtnjfkurjnpyn1stw7TPDobSAjnImcxcKk83zJ2/b4tpMFj/Wq1t38nZqHsNGwSJckwlH71xvTO31Qi+JHps7ab3QBsHCHJMzf2UVggUAAMD9WAoWpnAe+HUSqj8OZbJUwM7k4mXNfXO+sF7E/GdTFybbfhpIwxSI5phbCBbyZSxtc76ltRLUV3/9Wox3wkJuNwwWq84/G7ZcGxd/kcoX9fFeXQvxddaumDO//JTct8ziflrgH5hnEflhVev93GwyaV1tFixMO0242pFazQTIvOP9XIxKVbpLCwzO9H3duhn11yGcrRcsFn8FbPLKzZdZaq+anZmftY1ke68vybsQLAAAAO5FTrBQXy6k98SFC1McxnaBuJ70DuerXFd2W8ncijk9zi+YFhZvCwumVY+67tv22wgWyqyVENuwEhawy17f1r6GIr/vjYOFSi+QZxdz0/MXLsBnhUJb/9ZYuyIrvUCeXwQutYjdjRbI08CTLsA3DRZJ74j503uZ2zf0aShNv1CdWcHcLJBnr8VfdxSn79M1wSI8o6hm25ReIG+47xYmNCuvu3tjFr3zzyKK9TMyj3gECwAAgPuRHyysK5mO+9Lej+dhwhSQ5hd6Ts9lmvlmPUUL3+FRqsDf1f2HZgE1X1jeUrCwpmM5Oainrk9Dxl5LTkaTbCG8QbCw7Plrsu17W6KHsTSPRzJZChVOuObcQn0N0/HJvGD297qnbcn0jFgzuRx2pRmHfX27x8vvu3Gw0He1c0V0+8o1IWbuecdhJe/Cz8g1wULf7/K0nQSk7LyKxfb6Z3E0kPOFkxEsAAAA7seKYIGbcr+mtM7aFQAAAMDfC8HitsxGdl5G/mrgAAAAwN8bwaKUqQwPYokfx264VNSQIUNwAAAA8A9EsCjp4qUb928mUp+8p68CAAAA/0wECwAAAAClESwAAAAAlEawAAAAAFAawQIAAABAaQQLAAAAAKURLAAAAACURrAAAAAAUBrBAgAAAEBpBAsAAAAApREsAAAAAJRGsAAAAABQGsECAAAAQGkECwAAAAClESwAAAAAlCTyf0U5q5xYSsN0AAAAAElFTkSuQmCC" InformativeScreenshot="acf914d7e90deac18005fb2037120435.png" SearchSteps="Selector, FuzzySelector, Image">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target DesignTimeRectangle="1105, 207, 32, 32" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;html app='chrome.exe' title='Currency converter - Google Search' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div&amp;gt;span&amp;gt;svg' parentid='tsf' tag='svg' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='Currency converter - Google Search' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;div&amp;gt;span&amp;gt;svg' parentid='tsf' tag='svg' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAG2SURBVFhH7ZU9T8MwEED5beyww84P6A9gRAIJtjKxgGADFlj42KouMAEbYmGDEQlK+kUNz8rByapjO1GqIuVJJ0Wu4zyfz70FM2c0QiEaoRD/W+jueWwOOkPTOsrMartnlnd69pmx7uM4n1WNKKH3bGK2zvtmceOjMNaPMzu3CkGhp9cvmwn94ZWf7LQOMxs869+YWyVbhULslqORjyHAsbm8vE1sdrQUY2UoFNIf2Tzr56N+2leD3/nUVhm8QhyVLL6295mPhiGL8t7F/SgfjccrtN/5221KTeiNkLFUvEIckSycihQ62UrFK6RTn0qVd2sRouZ4L6X2hKgaoi5i4a9C3uOWpuIVopBl4ZgrL+iNnNwM89F4vELsVFJPxFxhfcMo7DJtxCsE+gPE6a1/x2RDt5iy7aNQCPQRELSS3euBlbt8GNln3V4kECrTPoJCwOJuE/UFG5C5ZCzlQkCUEFAP/PNOE1va7tnCl4y4jTZFKlrIha4v4eJeiBSp0kIhpknF3NTahMCVIkJStQpBqlTtQoCU7o0IMjaNmQgJ3MQiGZipEBTJwMyFQjRCIRqhEHMmZMw37iFtP10rLm4AAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                            <uix:NGetText DisplayName="Get Text 'INPUT'" sap:VirtualizedContainerService.HintSize="358,162.666666666667" sap2010:WorkflowViewState.IdRef="NGetText_1">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="278, 688, 193, 51" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;html app='chrome.exe' title='currency converter - Google Search' /&gt;&lt;webctrl tableRow='3' tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='currency converter - Google Search' /&gt;&lt;webctrl aaname='' tag='INPUT' type='number' /&gt;" InformativeScreenshot="e8cb22b87203573259c174818d6f30d8.png" SearchSteps="Selector, FuzzySelector">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target DesignTimeRectangle="489, 690, 405, 49" ElementType="DropDown" FriendlyName="'United States Dollar'" FullSelectorArgument="&lt;html app='chrome.exe' title='currency converter - Google Search' /&gt;&lt;webctrl tableRow='3' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='currency converter - Google Search' /&gt;&lt;webctrl type='' tag='SELECT' aaname='' check:text='United States Dollar' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image, TextFindAll" Text="United States Dollar" TextMethod="AttributeText" TextSelector="&lt;webctrl type='' tag='SELECT' /&gt;" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NGetText.Target>
+                              <uix:NGetText.Text>
+                                <OutArgument x:TypeArguments="ue:ExcelValue">[CurrentRow.ByField("Conversion")]</OutArgument>
+                              </uix:NGetText.Text>
+                            </uix:NGetText>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelForEachRow.Body>
+                    </ueab:ExcelForEachRow>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARHSURBVFhHvZddbBRVFMf7YrAq+OSbD6Kgb0qUUh60xq9VtA8k1EJrH1CsGIM+GLUmBA0kFi0WSMCHLcVCTMO2GmjFCiUFpH60sUjMEtIGLaAWama32w92dt2vOf7PndPd3M7sdmobf8k/M/fec8//zJ07s7NFXrEsawlUnclkmqEBaAxKisLS14yYKo6VafMHyR5A4hYoTh5BbAw6iLnLJc3cQZ7bkKQRSttp5w7mpqBdKKRY0noDE+7HxEuSZ94gVxA5l0n6wiDwYUwIyVyN9I0RMls/p4l33qDwi8+R4VtNxjOlFF7no/G3XyfzcBOlR/6UaB3kNHBYITbuyJU7zNOj12ly+/tkPL2KjKdKCgsxkx++p+bMhIvIuxIYuB0BjmWPn+qi0Atl7mYFFCp/nP45e0qy5IAH3w7nnsBAo8RkMY8cck3uVVMN2yWTDrwaxNYGFfGjpu12vnK3pKxIbRVFD+yj+DdHKd51DOf7KfJatRYztbueyLIkmw68UtqtQEeLjCl4s4Wef0xLyBqrWUuJ8/0S5SQx0EfhDeV0c/+n0pMfeDYrc5zfiYb2konufdNhPr7lZbKmpiQiP5YZlbPCwNPEKizm5a+WPoUVG6ZU9yKarLsna86PXGYiIhELB7zX8/I3S1uRuVpPqZ5blMx9d1FozUqKnzwuowsLvP1cwIC0FelffNkCWImjS4lSKRldWODdzwWMSVuR6r1bKyB9sUpG3Hnyo6hnnb2kXwi8DS4gKW1F6vQirYDM79tkxB03o3xq/VGz4gIS/2sBLecSMstmuoCwtBWOWxDcICPuuBnlU3u/YwXULdA34YVntQJGeh+kZGbum/CKkXEUcG7QsQfUJpzxGH6cNT/etZQeDayljuEeGfVOoC/pKGB0Qn81w9vPLyJtm1uxqxTrKab6jkdoZWCdkq/jFQrHxyVidm7GLarYa2rmG/0xGc0B70ouYAkq0Ub39O3Imk+rpvtdmkjM/ipO4iet7khcM2e1Oe+/icMd6vcAjYN2t82NqEFlX73kKKL8683Ue/28RDm5PH6NNnUGYDipmfNqxBKO5W9S5gxWYTk6tB1y4lqvo4BpVXz7FjVeaKH2yyfoy99O0mfBVnq1ZyuVBCrUeOmhOnrik7+yBXw/pH/XwisJz/vE3gadu2Q8yxdDnQ5zrypp3Uhlu392PPsMvHaKbQ7082f4RTskR/cfP+B21LiaFFJpWyUdCHZKlhzw+BWHW8VWB8uyDAH89aoxaoZo6097aFWbvcSzafOZD2gwMiyzcyD33zjcK3buIGCFWxEMb87Dg8doy3c7aE1nLa1ur1RX6uvYRLWnt6m9MBS5ItE6bI4LfEhsCiMrEZS58wa5eNkLX/lMUEQxJjZA//ljAHP5j+tOnLrfcy/IavA/Yn5xeIJjoSbM1R+1+YBki6H1SOyH+iEDSoj4nPv8iKlEDfYbblaKiv4FoeF/NqqvoEMAAAAASUVORK5CYII=" InformativeScreenshot="70609cc4ad922e11c421a01ebc5715e1.png" Selector="&lt;html app='chrome.exe' title='currency converter - Google Search'/&gt;" Url="https://www.google.com/search?rlz=1C1CHBD_enIN848IN848&amp;biw=1422&amp;bih=642&amp;sxsrf=ALeKk00X1Asf4c1r2rXklaQZe-t82_N4zA%3A1585923784553&amp;ei=yEaHXvmrId3iz7sPmeek-Ak&amp;q=currency+converter&amp;oq=currency+converter&amp;gs_lcp=CgZwc3ktYWIQAzIJCCMQJxBGEIICMgcIABAUEIcCMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BAgAEEc6BAgjECdQtw5YojNg1zRoAHACeACAAc4BiAG1DZIBBjEwLjUuMZgBAKABAaoBB2d3cy13aXo&amp;sclient=psy-ab&amp;ved=0ahUKEwj5r8a-uszoAhVd8XMBHZkzCZ8Q4dUDCAs&amp;uact=5" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+            <ueab:ExcelForEachRow DisplayName="Excel For Each Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="498,755.333333333333" sap2010:WorkflowViewState.IdRef="ExcelForEachRow_2" Range="[TemplateReport.Sheet(&quot;Report&quot;)]" SaveAfterEachRow="False">
+              <ueab:ExcelForEachRow.Body>
+                <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                  <ActivityAction.Argument1>
+                    <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                  </ActivityAction.Argument1>
+                  <ActivityAction.Argument2>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                  </ActivityAction.Argument2>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="460,566" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:VLookupX ColumnIndex="[2]" DisplayName="VLookup" ExactMatch="True" sap:VirtualizedContainerService.HintSize="418,267.333333333333" sap2010:WorkflowViewState.IdRef="VLookupX_1" Label="[CurrentRow.ByField(&quot;Currency&quot;)]" SourceRange="[TemplateReport.Table(&quot;Converter&quot;)]">
+                      <ueab:VLookupX.Value>
+                        <OutArgument x:TypeArguments="ue:ExcelValue">[Saved.Values(Of ExcelValue)("Value from VLookup")]</OutArgument>
+                      </ueab:VLookupX.Value>
+                    </ueab:VLookupX>
+                    <ueab:WriteCellX Cell="[CurrentRow.ByField(&quot;Total Sales USD&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="418,168.666666666667" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[string.Format(&quot;={0}*{1}*{2}&quot;, CurrentRow.ByField(&quot;Quantity&quot;), CurrentRow.ByField(&quot;Price&quot;), Saved.Values(Of ExcelValue)(&quot;Value from VLookup&quot;))]" />
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelForEachRow.Body>
+            </ueab:ExcelForEachRow>
+            <ueab:CreatePivotTableX DestinationRange="[TemplateReport.Sheet(&quot;Pivot&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="498,391.333333333333" sap2010:WorkflowViewState.IdRef="CreatePivotTableX_1" Range="[TemplateReport.Sheet(&quot;Report&quot;).Range(&quot;A:F&quot;)]" TableName="GLOBAL SALES REPORT" ValuesMode="Columns">
+              <ueab:CreatePivotTableX.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Location" Function="Sum" sap:VirtualizedContainerService.HintSize="382,64.6666666666667" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_1" Type="Row" />
+                    <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Total Sales USD" Function="Sum" sap:VirtualizedContainerService.HintSize="382,64.6666666666667" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_2" Type="Value" />
+                  </Sequence>
+                </ActivityAction>
+              </ueab:CreatePivotTableX.Body>
+            </ueab:CreatePivotTableX>
+            <ui:GetFileInfoX DisplayName="Get File Info" FilePath="[string.Format(&quot;{0}\FirstStudioXData\Report.xlsx&quot;, Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory))]" sap:VirtualizedContainerService.HintSize="498,137.333333333333" sap2010:WorkflowViewState.IdRef="GetFileInfoX_1" Output="[Saved.Values(Of FileInfo)(&quot;TemplateFileInfo&quot;)]" />
+            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[string.Format(&quot;reports\{0}{1}&quot;, Notes.Sheet(&quot;Date&quot;).Cell(&quot;YYYYMMDD&quot;), Saved.Values(Of FileInfo)(&quot;TemplateFileInfo&quot;).Name)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="498,164" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[Saved.Values(Of FileInfo)(&quot;TemplateFileInfo&quot;).FullName]" />
+            <umab:OutlookApplicationCard Account="{x:Null}" DisplayName="Use Outlook Account" sap:VirtualizedContainerService.HintSize="498,684.666666666667" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
+              <umab:OutlookApplicationCard.Body>
+                <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="460,496" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <umab:SendMailX Bcc="{x:Null}" Cc="{x:Null}" Account="[Outlook]" Body="[string.Format(&quot;Total sales for today are {0} USD&quot;, TemplateReport.Sheet(&quot;Pivot&quot;).Cell(&quot;B8&quot;))]" DisplayName="Send Outlook Email" sap:VirtualizedContainerService.HintSize="418,406" sap2010:WorkflowViewState.IdRef="SendMailX_1" IsDraft="False" MaxBodyDocumentSizeMB="2" Subject="[string.Format(&quot;Total Sales for {0}&quot;, Notes.Sheet(&quot;Date&quot;).Cell(&quot;Today&quot;))]" To="sachin.k@tavant.com">
+                      <umab:SendMailX.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                          <InArgument x:TypeArguments="x:String">[string.Format("reports\{0}{1}", Notes.Sheet("Date").Cell("YYYYMMDD"), Saved.Values(Of FileInfo)("TemplateFileInfo").Name)]</InArgument>
+                        </scg:List>
+                      </umab:SendMailX.Files>
+                    </umab:SendMailX>
+                  </Sequence>
+                </ActivityAction>
+              </umab:OutlookApplicationCard.Body>
+            </umab:OutlookApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelApplicationCard.Body>
+    </ueab:ExcelApplicationCard>
+  </ueab:SequenceX>
+</Activity>

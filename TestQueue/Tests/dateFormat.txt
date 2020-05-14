@@ -1,0 +1,5 @@
+Sub DateFormat()
+    Columns("E:E").Select
+    Selection.NumberFormat = "dd-mm-yyyy"
+    ActiveWorkbook.Save
+End Sub

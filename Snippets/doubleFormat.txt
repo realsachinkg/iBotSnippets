@@ -1,0 +1,5 @@
+Sub NumberFormat()
+    Columns("D:E").Select
+    Selection.NumberFormat = "0.00"
+    ActiveWorkbook.Save
+End Sub
